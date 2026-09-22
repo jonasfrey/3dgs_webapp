@@ -1,0 +1,10 @@
+{
+  "tasks": {
+    "start": "deno run -A src/server/main.ts",
+    "check": "deno check src/server/*.ts && deno lint",
+    "test": "deno test -A tests/"
+  },
+  "compilerOptions": { "checkJs": false },
+  "fmt": { "exclude": ["static/vendor", "data", ".runtime"] },
+  "lint": { "exclude": ["static/vendor", "data", ".runtime"] }
+}

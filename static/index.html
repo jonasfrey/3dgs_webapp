@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Depth Studio · Video to 3D</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script type="importmap">
+      { "imports": { "three": "/static/vendor/three.js" } }
+    </script>
+  </head>
+  <body>
+    <aside>
+      <a class="brand" href="#">◈ <span>depth<span class="light"
+          >studio</span></span></a><div class="workspace">WORKSPACE</div><a
+        class="nav active"
+        href="#"
+      >▦ &nbsp; All projects <span id="count">0</span></a><button
+        class="nav"
+        id="setup"
+      >
+        ⚙ &nbsp; System setup <i id="health-dot"></i>
+      </button>
+      <div class="aside-bottom">
+        <span class="local-dot"></span> Local workspace<p>
+          Your videos. Your machine.
+        </p><small>DEPTH STUDIO / V1</small>
+      </div>
+    </aside>
+    <div class="shell">
+      <header>
+        <span>Workspace <span class="slash">/</span> <span id="breadcrumb"
+          >All projects</span></span><span class="header-note"
+        >VIDEO → 3D GAUSSIAN SPLAT</span>
+      </header>
+      <main id="app"></main>
+      <footer>
+        Built for a new perspective.<span>Local processing <b>·</b> Native
+          3D</span>
+      </footer>
+    </div>
+    <dialog id="create-dialog">
+      <form id="create-form">
+        <div class="eyebrow">A NEW PERSPECTIVE</div>
+        <h2>Create a project</h2>
+        <p>Give your capture a name. You can upload a video next.</p><label
+        >Project name<input
+            name="name"
+            maxlength="120"
+            placeholder="e.g. Courtyard afternoon"
+            required
+            autofocus
+          ></label><div class="dialog-actions">
+          <button type="button" class="secondary" id="dismiss">Cancel</button>
+          <button class="primary">Create project ↗</button>
+        </div>
+      </form>
+    </dialog>
+    <dialog id="setup-dialog">
+      <div class="eyebrow">PROCESSING ENVIRONMENT</div>
+      <h2>System setup</h2>
+      <p>
+        Conversion uses FFmpeg, COLMAP, and Nerfstudio Splatfacto with a
+        compatible NVIDIA GPU.
+      </p>
+      <div id="dependencies"></div>
+      <p class="muted">Restart the server after installing dependencies.</p>
+      <button class="primary" id="close-setup">Done</button>
+    </dialog>
+    <div id="toast" role="status"></div>
+    <script type="module" src="/src/client/main.js"></script>
+  </body>
+</html>
